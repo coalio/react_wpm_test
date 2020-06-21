@@ -1,0 +1,21 @@
+
+.key_box {
+  font-size: 4rem;
+
+  padding: 10px;
+  border: 1px solid rgb(201, 179, 179);
+  border-radius: 2px;
+  margin: 5px 5px 5px 5px;
+  box-shadow: 5px black;
+
+  max-height: 5rem;
+  max-width: 5rem;
+}
+
+.correct {
+  background-color: rgba(0,255,0,0.3);
+}
+
+.wrong {
+  background-color: rgba(255,0,0,0.3);
+}
