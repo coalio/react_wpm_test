@@ -81,7 +81,6 @@ class App extends Component {
   // 2. Accuracy measure (percentage of total correct keypresses / total keypresses) * 100
   // 3. Input classification and conventions (parse input if dead key was a single quote)
   onKeyPressed = (e) => {
-    console.log(e)
     if (this.state.completed || this.state.documentSelected !== true) { return }
     let key = e.key
     if (e.code === 'Quote' && e.key === 'Dead') {
@@ -96,8 +95,6 @@ class App extends Component {
         this.setState({ ...this.state, onQuote: false })
       }
       if (this.state.sentences[this.sentence_id].text.substring(this.state.documentInput.length, this.state.documentInput.length + key.length) !== key) {
-        console.log(this.state.rawMistakes)
-        console.log(this.state.sentences[this.sentence_id].text.substring(this.state.documentInput.length, this.state.documentInput.length + key.length))
         this.setState({ ...this.state, rawMistakes: this.state.rawMistakes + key.length})
       } else {
         this.setState({ ...this.state, rawCorrect: this.state.rawCorrect + key.length})
@@ -180,7 +177,7 @@ class App extends Component {
     return (
       <div>
         {this.state.completed === false ?
-          <div>
+          <div className="hide-if-mobile">
 
             <div>
               <h6>Sentences: {this.state.sentences.length - 1}</h6>
@@ -207,6 +204,7 @@ class App extends Component {
             <h4>WPM: {this.state.wpm}</h4>
             <h4>Accuracy: {this.state.accuracy}</h4>
             <h4>Time: {this.state.timeSpent}</h4>
+            <h9 style={{color: 'gray'}}><em>Made with very very love by <span style={{color: 'white', backgroundColor: 'gray', borderRadius: '2px', borderColor: 'gray', borderWidth: '2px', padding: '0 3px'}}>coal</span> (<a href="https://github.com/coalio/" style={{color: 'gray'}}>@coalio</a>)</em></h9>
           </div> :
 
           <div>
@@ -228,7 +226,12 @@ class App extends Component {
             <button className='common-button' onClick={() => { this.startTest() }}>Take another test!</button>
           </div>
         }
-        <h9>Made with very very love by coal (<a href="https://github.com/coalio/">@coalio</a>)</h9>
+        <div className='hide-if-pc'>
+          <h2>Hey there!</h2>
+          <h3>Looks like your screen is either very very very small, or you're using a <span style={{color: 'white', backgroundColor: 'blue', borderRadius: '2px', borderColor: 'blue', borderWidth: '2px', padding: '0 3px'}}>mobile device</span></h3>
+          <h3>Unfortunately, this website is designed for PC, so, yeah, sorry</h3>
+          <h6>If you're using a PC (with a decent screen width), maybe try <span style={{color: 'blue'}}>making the window larger?</span></h6>
+        </div>
       </div>
     );
   }
