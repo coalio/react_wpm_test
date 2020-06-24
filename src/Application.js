@@ -228,7 +228,8 @@ class App extends Component {
         }
         <div className='hide-if-pc'>
           <h2>Hey there!</h2>
-          <h3>Looks like your screen is either very very very small, or you're using a <span style={{color: 'white', backgroundColor: 'blue', borderRadius: '2px', borderColor: 'blue', borderWidth: '2px', padding: '0 3px'}}>mobile device</span></h3>
+          <h3>Looks like your screen is either very very very small, or you're using a </h3>
+          <span style={{color: 'white', backgroundColor: 'blue', borderRadius: '2px', borderColor: 'blue', borderWidth: '2px', padding: '0 3px'}}>mobile device</span>
           <h3>Unfortunately, this website is designed for PC, so, yeah, sorry</h3>
           <h6>If you're using a PC (with a decent screen width), maybe try <span style={{color: 'blue'}}>making the window larger?</span></h6>
         </div>
