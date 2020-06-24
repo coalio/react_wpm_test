@@ -84,7 +84,7 @@ class App extends Component {
     console.log(e)
     if (this.state.completed || this.state.documentSelected !== true) { return }
     let key = e.key
-    if (e.code === 'Quote') {
+    if (e.code === 'Quote' && e.key === 'Dead') {
       this.setState({ ...this.state, onQuote: true })
     }
     if (key === 'Backspace') {
@@ -228,6 +228,7 @@ class App extends Component {
             <button className='common-button' onClick={() => { this.startTest() }}>Take another test!</button>
           </div>
         }
+        <h9>Made with very very love by coal (<a href="https://github.com/coalio/">@coalio</a>)</h9>
       </div>
     );
   }
