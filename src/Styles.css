@@ -1,0 +1,56 @@
+body {
+  text-align: center;
+}
+
+.display_box {
+  display: flex;
+  overflow-x: scroll;
+  
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 0 auto;
+  height: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+
+.navigation {
+  font-size: 1.3rem;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navitem {
+  min-width: 110px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.navitem:last-of-type {
+  min-width: 120px;
+  border-left: 1px solid gray;
+  display: inline-block;
+}
+
+.markcorrect {
+  background-color: rgba(58, 255, 19, 0.637);
+}
+
+.markincorrect {
+  background-color: rgba(255, 58, 19, 0.637);
+}
+
+.common-button {
+  width: 225px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid gray;
+}
+
+.fluid-button {
+  padding: 2px;
+  background-color: white;
+  border: 1px solid gray;
+}
