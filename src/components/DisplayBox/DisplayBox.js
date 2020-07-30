@@ -9,7 +9,7 @@ const DisplayBox = props => {
     displayClass = 'inactive'
   }
   return (
-    <div className={"display_box " + displayClass} onClick={() => {that.setState({...that.state, documentSelected: true})}}>
+    <div className={"display_box disallow-selection " + displayClass} onClick={() => {that.setState({...that.state, documentSelected: true})}}>
       {that.stringArray.map((char, index) => {
         var classify = ''
         if (that.state.documentInput.charAt(index) === that.state.sentences[that.sentence_id].text.charAt(index)) {
